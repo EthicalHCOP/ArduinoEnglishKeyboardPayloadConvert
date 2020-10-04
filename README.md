@@ -4,14 +4,23 @@ Al programar en arduino un keyboard, estos suelen tener una distribución de tec
 Veamos un ejemplo:
 Si yo quisiera escribir el payload "powershell -c get-childitem C:/" en el cmd de windows, debido a la distribución del teclado está colocando "powershell 'c get'childitem CÑ-".
 Al utilizar el script de la siguiente manera (python aekpc.py -P "powershell -c get-childitem C:/"), este nos está devolviendo:
+
 Keyboard.print("powershell ");
+
 Keyboard.write(47);
+
 Keyboard.print("c get");
+
 Keyboard.write(47);
+
 Keyboard.print("childitem C");
+
 Keyboard.write(62);
+
 Keyboard.print("");
+
 Keyboard.write(38);
+
 Esto lo llevamos directamente al código arduino y al ejecutarlo retorna el resultado esperado inicialmente "powershell -c get-childitem C:/"
 
 En este repositorio encontraras la plantilla de codigo para arduino y el script en python.
